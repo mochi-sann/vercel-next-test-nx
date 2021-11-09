@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "vercel-next-test-nx": "apps/vercel-next-test-nx",
+    "vercel-next-test-nx-e2e": "apps/vercel-next-test-nx-e2e"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "root": "apps/vercel-next-test-nx",
+  "sourceRoot": "apps/vercel-next-test-nx",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "root": "apps/vercel-next-test-nx",
+        "outputPath": "dist/apps/vercel-next-test-nx"
+      },
+      "configurations": {
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/next:server",
+      "options": {
+        "buildTarget": "vercel-next-test-nx:build",
+        "dev": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "vercel-next-test-nx:build:production",
+          "dev": false
+        }
+      }
+    },
+    "export": {
+      "executor": "@nrwl/next:export",
+      "options": {
+        "buildTarget": "vercel-next-test-nx:build:production"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/vercel-next-test-nx"],
+      "options": {
+        "jestConfig": "apps/vercel-next-test-nx/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/vercel-next-test-nx/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  },
+  "tags": []
+}

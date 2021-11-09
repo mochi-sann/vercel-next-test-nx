@@ -1,0 +1,29 @@
+{
+  "root": "apps/vercel-next-test-nx-e2e",
+  "sourceRoot": "apps/vercel-next-test-nx-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/vercel-next-test-nx-e2e/cypress.json",
+        "devServerTarget": "vercel-next-test-nx:serve",
+        "tsConfig": "apps/vercel-next-test-nx-e2e/tsconfig.json"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "vercel-next-test-nx:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/vercel-next-test-nx-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["vercel-next-test-nx"]
+}
