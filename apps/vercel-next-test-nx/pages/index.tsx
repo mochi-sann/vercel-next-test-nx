@@ -25,6 +25,7 @@ export function Index() {
           </div>
         </a>
       </div>
+      <h1 className="main_title">vercel-next-test-nx!</h1>
       <p>Here are some links to help you get started.</p>
       <ul className="resources">
         <li className="col-span-2">
